@@ -96,6 +96,60 @@ header nav.menu-desktop button{
     height: 48px;
 }
 
+/* Estilo do menu mobile */
+
+.btn-menu-mobile{
+    display: none;
+}
+
+.btn-menu-mobile i{
+    font-size: 2.8rem;
+    color: var(--corAzul);
+}
+
+.menu-mobile{
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--corAzul);
+    text-align: right;
+    padding: 32px 0;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.menu-mobile ul{
+    list-style: none;
+    padding: 64px 0;
+}
+
+.menu-mobile ul li a{
+    color: var(--corAmarela);
+    font-size: 1.4rem;
+    text-decoration: none;
+    padding: 24px;
+    display: block;
+    transition: .2s;
+}
+
+.menu-mobile ul li a:hover{
+    background-color: var(--corAmarela);
+    color: var(--corAzul);
+}
+
+.menu-mobile .bi-x-lg{
+    font-size: 2rem;
+    color: var(--corAmarela);
+    padding: 24px;
+}
+
+.menu-mobile.abrir-menu{
+    left: 0;
+    pointer-events: initial;
+}
+
 /* Estilo da hero */
 section.hero{
     background-image: linear-gradient(to left, var(--corAzul) 70%, var(--corAmarela) 30%);
@@ -374,4 +428,103 @@ footer > .interface{
 footer .logo-footer img{
     max-width: 160px;
     margin-bottom: 16px;
+}
+
+@media (max-width: 1000px) {
+
+    h1.titulo-section{
+        font-size: 3rem;
+    }
+
+    /* Estilo do menu */
+    header{
+        background-image: none;
+        background-color: var(--corAmarela);
+    }
+
+    .menu-desktop{
+        display: none;
+    }
+
+    /* Estilo da Hero */
+    section.hero{
+    background-image: linear-gradient(to top, var(--corAzul) 90%, var(--corAmarela) 10%);
+}
+
+.hero > .interface{
+    text-align: center;
+    gap: 64px;
+    flex-direction: column-reverse;
+}
+
+.hero .txt-hero h1{
+    font-size: 2rem;
+}
+
+.hero .txt-hero h1 span{
+    font-size: 3rem;
+}
+
+.hero .txt-hero p{
+    font-size: 1rem;
+}
+
+.hero .img-hero img{
+    max-width: 320px;
+}
+
+/* Estilo sobre mim*/
+
+.sobre-mim > .interface{
+    flex-direction: column;
+    gap: 64px;
+}
+
+.sobre-mim .img-sobre img{
+    max-width: 300px;
+}
+
+/* Estilo de seção habilidades */
+
+.skills article{
+    grid-template: 1fr 1fr 1fr / 1fr;
+}
+
+.skills h1{
+    font-size: 2.4rem;
+}
+
+/* Estilo do Portfólio */
+
+.portfolio .portfolio-container{
+    grid-template: 1fr 1fr 1fr 1fr/ 1fr;
+}
+
+.portfolio-container .portfolio-box{
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Estilo do Formulário */
+.contato > .interface{
+    flex-direction: column;
+    gap: 32px;
+}
+
+.contato form{
+    width: 100%;
+}
+
+.contato form .tel-proj{
+    display: block;
+}
+
+/* RODAPÉ */
+
+footer > .interface{
+    flex-direction: column-reverse;
+    gap: 32px;
+    text-align: center;
+}
+
 }
