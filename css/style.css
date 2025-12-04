@@ -414,6 +414,61 @@ section.contato{
     border-color: var(--corAmarela);
 }
 
+/* BOTÃO LOADER */
+button#btnEnviar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#btnEnviar .loader {
+    display: none;
+    width: 18px;
+    height: 18px;
+    border: 3px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+#btnEnviar.loading .btn-text {
+    display: none;
+}
+
+#btnEnviar.loading .loader {
+    display: block;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* MENSAGEM DE SUCESSO */
+#msg-sucesso {
+    margin-top: 20px;
+    background: #00c853;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    display: none;
+}
+
+#msg-erro {
+    margin-top: 20px;
+    background: #d50000;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    display: none;
+}
+
+
 /* RODAPÉ */
 footer{
     padding: 40px 0;
