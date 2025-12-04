@@ -211,6 +211,13 @@ section.sobre-mim{
     margin: 24px 0;
 }
 
+.sobre-mim .txt-sobre h2{
+    color: var(--corBranca);
+    line-height: 1.6;
+    margin: 24px 0;
+}
+
+
 .sobre-mim .btn-redes button, footer .btn-redes button{
     width: 56px;
     height: 56px;
