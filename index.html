@@ -211,6 +211,10 @@
                 </form>
                 <!-- FIM DO FORMULÁRIO -->
 
+                <div id="msg-sucesso">✔ Sua mensagem foi enviada com sucesso!</div>
+                <div id="msg-erro">❌ Ocorreu um erro ao enviar sua mensagem. Tente novamente.</div>
+
+
             </div>
 
         </section>
@@ -238,6 +242,44 @@
 
     <script src="js/portfolio.js"></script>
     <script src="js/menu_mobile.js"></script>
+
+    <script>
+document.getElementById("contatoForm").addEventListener("submit", async function(e) {
+    e.preventDefault(); // NÃO deixa recarregar a página
+
+    const btn = document.getElementById("btnEnviar");
+    const sucesso = document.getElementById("msg-sucesso");
+    const erro = document.getElementById("msg-erro");
+
+    btn.classList.add("loading");
+
+    const url = "https://formsubmit.co/ajax/aluisiowebsites@gmail.com";
+
+    const formData = new FormData(this);
+
+    try {
+        const resposta = await fetch(url, {
+            method: "POST",
+            body: formData
+        });
+
+        if (resposta.ok) {
+            sucesso.style.display = "block";
+            erro.style.display = "none";
+            this.reset();
+        } else {
+            sucesso.style.display = "none";
+            erro.style.display = "block";
+        }
+
+    } catch (e) {
+        sucesso.style.display = "none";
+        erro.style.display = "block";
+    }
+
+    btn.classList.remove("loading");
+});
+</script>
 
 </body>
 </html>
