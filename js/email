@@ -1,0 +1,37 @@
+(function(){
+    emailjs.init("hvajaHnvxP1puGaNW");
+})();
+
+document.getElementById("contatoForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const btn = document.getElementById("btnEnviar");
+    const sucesso = document.getElementById("msg-sucesso");
+    const erro = document.getElementById("msg-erro");
+
+    btn.classList.add("loading");
+
+    emailjs.send("service_cxl8e48", "template_rt7ka8m", {
+    Nome: this.Nome.value,
+    Email: this.Email.value,
+    WhatsApp: this.WhatsApp.value,
+    Tipo_do_Projeto: this.Tipo_do_Projeto.value,
+    Mensagem: this.Mensagem.value
+})
+.then(() => {
+    // Mostra feedback visual rápido
+    sucesso.style.display = "block";
+    erro.style.display = "none";
+    btn.classList.remove("loading");
+
+    // Espera 800ms para UX (opcional)
+    setTimeout(() => {
+        window.location.href = "sucesso.html";
+    }, 800);
+})
+.catch(() => {
+    sucesso.style.display = "none";
+    erro.style.display = "block";
+    btn.classList.remove("loading");
+});
+});

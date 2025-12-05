@@ -182,7 +182,7 @@
                 </div>
 
                 <!-- FORMULÁRIO CORRIGIDO -->
-                <form id="contatoForm" action="https://formsubmit.co/aluisiowebsites@gmail.com" method="POST">
+                <form id="contatoForm">
 
                     <input type="text" name="Nome" placeholder="*Seu nome completo" required>
 
@@ -195,25 +195,14 @@
 
                     <textarea name="Mensagem" placeholder="*Fale sobre sua ideia" required></textarea>
 
-                    <!-- Anti SPAM -->
-                    <input type="text" name="_honey" style="display:none !important">
-
-                    <!-- Configurações do FormSubmit -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="📩 Novo contato do Portfólio">
-                    <input type="hidden" name="_next" value="https://aluisiorsbneto.github.io/portfolio/sucesso">
-
-                    <input type="hidden" name="Origem" value="Site Portfólio - GitHub Pages">
-
                     <button type="submit" id="btnEnviar">
                         <span class="btn-text">Enviar</span>
                         <span class="loader"></span>
                     </button>
 
                 </form>
-                <!-- FIM DO FORMULÁRIO -->
 
+                <!-- FIM DO FORMULÁRIO -->
 
             </div>
 
@@ -242,6 +231,7 @@
 
     <script src="js/portfolio.js"></script>
     <script src="js/menu_mobile.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 </body>
 </html>
