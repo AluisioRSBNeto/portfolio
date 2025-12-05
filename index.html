@@ -182,8 +182,7 @@
                 </div>
 
                 <!-- FORMULÁRIO CORRIGIDO -->
-                <form id="contatoForm">
-
+               <form id="contatoForm" onsubmit="enviarEmail(event)">
                     <input type="text" name="Nome" placeholder="*Seu nome completo" required>
 
                     <input type="email" name="Email" placeholder="*Seu melhor e-mail" required>
@@ -199,10 +198,12 @@
                         <span class="btn-text">Enviar</span>
                         <span class="loader"></span>
                     </button>
-
                 </form>
-
                 <!-- FIM DO FORMULÁRIO -->
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<div id="emailjs-debug" style="display:none"></div>
 
             </div>
 
@@ -229,9 +230,8 @@
 
     </footer>
 
-    <script src="js/portfolio.js"></script>
+    <script src="js/email.js"></script>
     <script src="js/menu_mobile.js"></script>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 </body>
 </html>
